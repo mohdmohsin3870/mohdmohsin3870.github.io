@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohd Mohsin, PhD | Mitochondrial biology and inflammation</title>
+<meta name="description" content="Mohd Mohsin, PhD in Biotechnology (Jamia Millia Islamia). Research on mitochondrial quality control, mitophagy and macrophage inflammation in sepsis-induced acute lung injury.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F7F8F6;
+    --ink: #1D2430;
+    --muted: #5B6573;
+    --rule: #DCE0E3;
+    --stain: #B3245E;      /* TMRE-like magenta */
+    --stain-soft: #F3E6EC;
+    --serif: "Literata", Georgia, serif;
+    --sans: "Instrument Sans", system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--stain); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--stain); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Top bar */
+  .topbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 0; font-family: var(--sans); font-size: 0.9375rem;
+  }
+  .topbar .home { color: var(--ink); text-decoration: none; font-weight: 600; }
+  .topbar nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .topbar nav a { color: var(--muted); text-decoration: none; }
+  .topbar nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 3rem; align-items: center;
+    padding: 4rem 0 4.5rem; border-bottom: 1px solid var(--rule);
+  }
+  .hero h1 {
+    font-weight: 500; font-size: clamp(2.6rem, 5.5vw, 3.9rem); line-height: 1.05;
+    letter-spacing: -0.02em; margin: 0 0 0.35rem;
+  }
+  .hero .role { font-family: var(--sans); color: var(--muted); font-size: 1rem; margin: 0; }
+  .hero .id { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.75rem; }
+  .hero .photo { width: 112px; height: 112px; object-fit: cover; border-radius: 8px; flex: none; }
+  @media (max-width: 480px) { .hero .photo { width: 84px; height: 84px; } .hero .id { gap: 1rem; } }
+  .hero .statement { font-size: 1.25rem; line-height: 1.55; margin: 0 0 1.75rem; max-width: 34em; }
+  .hero .status {
+    display: inline-block; font-family: var(--sans); font-size: 0.9375rem;
+    background: var(--stain-soft); color: var(--ink); padding: 0.45rem 0.8rem; border-radius: 4px;
+  }
+  .links { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1.5rem; font-family: var(--sans); font-size: 0.9375rem; }
+
+  .mito { width: 100%; height: auto; display: block; }
+  .mito .membrane { fill: none; stroke: var(--ink); stroke-width: 1.6; }
+  .mito .crista { fill: none; stroke: var(--stain); stroke-width: 1.8; stroke-linecap: round; }
+  .mito .nucleoid { fill: var(--stain); opacity: 0.55; }
+  @media (prefers-reduced-motion: no-preference) {
+    .mito .crista { stroke-dasharray: 320; stroke-dashoffset: 320; animation: draw 1.6s ease-out forwards; }
+    .mito .crista:nth-of-type(2) { animation-delay: .08s; } .mito .crista:nth-of-type(3) { animation-delay: .16s; }
+    .mito .crista:nth-of-type(4) { animation-delay: .24s; } .mito .crista:nth-of-type(5) { animation-delay: .32s; }
+    .mito .crista:nth-of-type(6) { animation-delay: .40s; } .mito .crista:nth-of-type(7) { animation-delay: .48s; }
+    .mito .crista:nth-of-type(8) { animation-delay: .56s; } .mito .crista:nth-of-type(9) { animation-delay: .64s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+  }
+
+  /* Sections */
+  section.block { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+  section.block > h2 {
+    font-family: var(--sans); font-weight: 600; font-size: 1.0625rem; margin: 0.3rem 0 0; color: var(--ink);
+  }
+  .body { max-width: 44em; }
+  .body p { margin: 0 0 1rem; }
+  .body h3 { font-size: 1.125rem; font-weight: 600; margin: 2rem 0 0.75rem; }
+  .body h3:first-child { margin-top: 0; }
+
+  .themes { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  .themes li { padding-left: 1.1rem; border-left: 2px solid var(--stain); margin-bottom: 1.1rem; }
+  .themes strong { font-weight: 600; display: block; }
+
+  /* Dated rows: publications, experience, talks */
+  .dated { list-style: none; padding: 0; margin: 0; }
+  .dated li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 0.9rem 0; border-top: 1px solid var(--rule); }
+  .dated li:first-child { border-top: 0; padding-top: 0; }
+  .dated .when { font-family: var(--sans); font-size: 0.9375rem; color: var(--muted); padding-top: 0.15rem; }
+  .dated .what { margin: 0; }
+  .dated .meta { display: block; color: var(--muted); font-size: 0.975rem; }
+  .dated .what a { color: var(--ink); text-decoration-color: var(--stain); }
+  .dated .what a:hover { color: var(--stain); }
+  .me { font-weight: 600; }
+  .note { font-size: 0.9375rem; color: var(--muted); margin-top: 1rem; }
+
+  .methods { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 2rem; margin: 0; }
+  .methods dt { font-weight: 600; }
+  .methods dd { margin: 0.2rem 0 0; color: var(--ink); }
+
+  footer { font-family: var(--sans); font-size: 0.875rem; color: var(--muted); padding: 2.5rem 0 3rem; }
+
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0 3rem; }
+    .hero figure { max-width: 280px; }
+    section.block { grid-template-columns: 1fr; gap: 1rem; padding: 2.5rem 0; }
+    .methods { grid-template-columns: 1fr; }
+    .topbar nav { gap: 1rem; }
+  }
+  @media (max-width: 480px) {
+    .dated li { grid-template-columns: 1fr; gap: 0.2rem; }
+    .topbar { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <a class="home" href="#top">Mohd Mohsin</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <div class="id">
+          <img class="photo" src="photo.jpg" width="112" height="112" alt="Portrait of Mohd Mohsin">
+          <div>
+            <h1>Mohd Mohsin</h1>
+            <p class="role">PhD in Biotechnology, Jamia Millia Islamia, New Delhi</p>
+          </div>
+        </div>
+        <p class="statement">I study how damaged mitochondria drive inflammation: how cells detect and remove faulty mitochondria, and what happens in macrophages and the lung when that quality control fails.</p>
+        <span class="status">Looking for a postdoctoral position from 2027</span>
+        <div class="links">
+          <a href="mailto:rs.mmohsin@jmi.ac.in">Email</a>
+          <a href="Mohd_Mohsin_CV.pdf">CV (PDF)</a>
+          <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/mohd-mohsin-12912bba/">LinkedIn</a>
+        </div>
+      </div>
+      <figure style="margin:0">
+        <svg class="mito" viewBox="0 0 420 240" role="img" aria-label="Line drawing of a mitochondrion with folded inner membranes">
+          <defs>
+            <clipPath id="matrix"><rect x="26" y="26" width="368" height="188" rx="94"/></clipPath>
+          </defs>
+          <rect class="membrane" x="10" y="10" width="400" height="220" rx="110"/>
+          <g clip-path="url(#matrix)">
+            <path class="crista" d="M80 26 V128 a9 9 0 0 0 18 0 V26"/>
+            <path class="crista" d="M122 214 V104 a9 9 0 0 1 18 0 V214"/>
+            <path class="crista" d="M164 26 V138 a9 9 0 0 0 18 0 V26"/>
+            <path class="crista" d="M206 214 V96 a9 9 0 0 1 18 0 V214"/>
+            <path class="crista" d="M248 26 V134 a9 9 0 0 0 18 0 V26"/>
+            <path class="crista" d="M290 214 V102 a9 9 0 0 1 18 0 V214"/>
+            <path class="crista" d="M332 26 V124 a9 9 0 0 0 18 0 V26"/>
+            <circle class="nucleoid" cx="112" cy="70" r="3.5"/>
+            <circle class="nucleoid" cx="238" cy="178" r="3.5"/>
+            <circle class="nucleoid" cx="318" cy="64" r="3.5"/>
+          </g>
+          <rect class="membrane" x="26" y="26" width="368" height="188" rx="94"/>
+        </svg>
+      </figure>
+    </div>
+
+    <section class="block" id="research" aria-labelledby="h-research">
+      <h2 id="h-research">Research</h2>
+      <div class="body">
+        <p>My PhD asked why mitochondria fail in sepsis-induced acute lung injury, and whether protecting them reduces lung damage. Using LPS-stimulated macrophages and lung epithelial cells, together with caecal ligation and puncture and intratracheal LPS mouse models, I found that PINK1/Parkin mitophagy is impaired in the injured lung. Restoring it with urolithin A reduced mitochondrial dysfunction, inflammasome activation and lung inflammation, and shifted macrophage polarisation (<a href="https://doi.org/10.1016/j.mito.2025.102047"><em>Mitochondrion</em>, 2025</a>).</p>
+        <p>I now work on an ICMR-funded project on long non-coding RNAs in lung development and sepsis-induced lung injury in neonatal mice.</p>
+        <h3>Where I want to go next</h3>
+        <ul class="themes">
+          <li><strong>Mitochondrial quality control upstream of mitophagy</strong>How single mitochondrial proteins are checked, repaired or degraded, and how failure of these systems is signalled.</li>
+          <li><strong>Mitochondria as triggers of innate immunity</strong>mtDNA release, cGAS-STING and inflammasome signalling in macrophages.</li>
+          <li><strong>Lung inflammation and repair</strong>How immunometabolic changes in macrophages shape epithelial injury and recovery.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="publications" aria-labelledby="h-pubs">
+      <h2 id="h-pubs">Publications</h2>
+      <div class="body">
+        <ul class="dated">
+          <li><span class="when">2025</span><p class="what"><span class="me">Mohsin M*</span>, Zaki A*, Tabassum G, Khan S, Ali S, Ahmad T, Syed MA. <a href="https://doi.org/10.1016/j.mito.2025.102047">Urolithin-A supplementation alleviates sepsis-induced acute lung injury by reducing mitochondrial dysfunction and modulating macrophage polarization.</a> <span class="meta"><em>Mitochondrion</em> 84:102047</span></p></li>
+          <li><span class="when">2025</span><p class="what">Zaki A*, <span class="me">Mohsin M*</span>, Khan S, Khan A, Ahmad S, Verma A, Ali S, Fatma T, Syed MA. <a href="https://doi.org/10.1007/s10787-024-01609-6">Vitexin mitigates oxidative stress, mitochondrial damage, pyroptosis and regulates SNHG1/DNMT1/miR-495 axis in sepsis-associated acute lung injury.</a> <span class="meta"><em>Inflammopharmacology</em> 33:1435–1454</span></p></li>
+          <li><span class="when">2025</span><p class="what">Khan S, Zaki A, Masood M, Khan A, <span class="me">Mohsin M</span>, Verma A, Wilson PC, Ali S, Syed MA. <a href="https://doi.org/10.1016/j.intimp.2025.114166">Combating sepsis-induced acute lung injury: PARP1 inhibition mediates oxidative stress mitigation and miR-135a-5p/SMAD5/Nanog axis drives regeneration.</a> <span class="meta"><em>International Immunopharmacology</em> 148:114166</span></p></li>
+          <li><span class="when">2025</span><p class="what">Tabassum G, Arora S, Singh P, <span class="me">Mohsin M</span>, Khan S, Khan A, Dohare R, Dev K, Syed MA. <a href="https://doi.org/10.1007/s11033-025-11043-8">miR-101-3p overexpression suppresses NSCLC progression through immune-related gene CALCRL regulation and lncRNA NEAT1 axis.</a> <span class="meta"><em>Molecular Biology Reports</em> 52:932</span></p></li>
+          <li><span class="when">2023</span><p class="what">Singh P, <span class="me">Mohsin M</span>, Sultan A, Jha P, Khan MM, Syed MA, Chopra M, Serajuddin M, Rahmani AH, Almatroodi SA, Alrumaihi F, Dohare R. <a href="https://doi.org/10.1021/acsomega.3c00020">Combined multiomics and in silico approach uncovers PRKAR1A as a putative therapeutic target in multi-organ dysfunction syndrome.</a> <span class="meta"><em>ACS Omega</em> 8:9555–9568</span></p></li>
+          <li><span class="when">2022</span><p class="what"><span class="me">Mohsin M*</span>, Singh P*, Khan S, Verma AK, Jha R, Alsahli MA, Rahmani AH, Almatroodi SA, Alrumaihi F, Kaprwan N, Dohare R, Syed MA. <a href="https://doi.org/10.1038/s41598-022-16183-6">Integrated transcriptomic and regulatory network analyses uncovers the role of let-7b-5p, SPIB, and HLA-DPB1 in sepsis.</a> <span class="meta"><em>Scientific Reports</em> 12:11963</span></p></li>
+          <li><span class="when">2022</span><p class="what">Arora S, Khan S, Zaki A, Tabassum G, <span class="me">Mohsin M</span>, Bhutto HN, Ahmad T, Fatma T, Syed MA. <a href="https://doi.org/10.1016/j.semcancer.2022.03.002">Integration of chemokine signaling with non-coding RNAs in tumor microenvironment and heterogeneity in different cancers.</a> <span class="meta"><em>Seminars in Cancer Biology</em> 86:720–736</span></p></li>
+          <li><span class="when">2021</span><p class="what"><span class="me">Mohsin M*</span>, Tabassum G*, Ahmad S, Ali S, Syed MA. <a href="https://doi.org/10.1016/j.mito.2021.04.009">The role of mitophagy in pulmonary sepsis.</a> <span class="meta"><em>Mitochondrion</em> 59:63–75</span></p></li>
+          <li><span class="when">2021</span><p class="what">Ahmad S, Arora S, Khan S, <span class="me">Mohsin M</span>, Manda K, Syed MA. <a href="https://doi.org/10.1016/j.jnutbio.2020.108571">Vitamin D and its therapeutic relevance in pulmonary diseases.</a> <span class="meta"><em>Journal of Nutritional Biochemistry</em> 90:108571</span></p></li>
+          <li><span class="when">2021</span><p class="what">Sharma A, Zaki A, Tabassum G, Khan S, <span class="me">Mohsin M</span>, Syed MA. Role of mitochondrial oxidative stress in pathophysiology of lung cancer. <span class="meta">Book chapter in <em>Free Radical Biology and Environmental Toxicity</em>, Springer</span></p></li>
+        </ul>
+        <p class="note">* Equal contribution.</p>
+      </div>
+    </section>
+
+    <section class="block" id="experience" aria-labelledby="h-exp">
+      <h2 id="h-exp">Experience and education</h2>
+      <div class="body">
+        <ul class="dated">
+          <li><span class="when">2026 – now</span><p class="what">Project Research Scientist-I, ICMR project on lncRNAs in neonatal sepsis-induced lung injury <span class="meta">Translational Research Lab, Department of Biotechnology, Jamia Millia Islamia (Dr Syed Mansoor Ali)</span></p></li>
+          <li><span class="when">2022 – 2026</span><p class="what">PhD in Biotechnology, Jamia Millia Islamia <span class="meta">Thesis: <em>The Role of Mitochondria in the Pathogenesis of Acute Lung Injury</em>. Viva defended October 2026. ICMR Senior Research Fellow, 2023–2026.</span></p></li>
+          <li><span class="when">2020 – 2022</span><p class="what">Junior and Senior Research Fellow, DST-SERB project on mitophagy and macrophage polarisation in sepsis-induced lung injury <span class="meta">Jamia Millia Islamia</span></p></li>
+          <li><span class="when">2017 – 2019</span><p class="what">MSc in Biosciences, Jamia Millia Islamia <span class="meta">First Class with Distinction. Thesis on the F-helix in neuroserpin polymerisation.</span></p></li>
+          <li><span class="when">2014 – 2017</span><p class="what">BSc Botany (Honours), Kirori Mal College, University of Delhi <span class="meta">First Class with Distinction</span></p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="methods" aria-labelledby="h-methods">
+      <h2 id="h-methods">Methods</h2>
+      <div class="body">
+        <dl class="methods">
+          <div><dt>In vivo models</dt><dd>CLP sepsis, intratracheal LPS and neonatal sepsis models in C57BL/6 mice; BALF and tissue collection</dd></div>
+          <div><dt>Cells</dt><dd>RAW264.7 and MLE-12 lines; peritoneal, bone marrow-derived and lung macrophages; transfection in HEK293</dd></div>
+          <div><dt>Mitochondrial phenotyping</dt><dd>TMRE, MitoTracker, MitoSOX and DCFDA by flow cytometry and confocal microscopy</dd></div>
+          <div><dt>Molecular and imaging</dt><dd>Western blotting, qPCR, ELISA, cloning; immunofluorescence, immunohistochemistry, TUNEL</dd></div>
+          <div><dt>Data analysis</dt><dd>Transcriptomic and regulatory-network analysis; RNA-seq and miRNA-seq workflows</dd></div>
+          <div><dt>Mentoring</dt><dd>Trained six PhD students in animal handling and in vivo procedures</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block" id="talks" aria-labelledby="h-talks">
+      <h2 id="h-talks">Posters and awards</h2>
+      <div class="body">
+        <ul class="dated">
+          <li><span class="when">Dec 2025</span><p class="what">Cell Bio 2025, Philadelphia. Poster on urolithin A, mitochondrial dysfunction and inflammation in sepsis-induced lung injury. <span class="meta">Supported by an EMBO Travel Grant and an ANRF International Travel Grant</span></p></li>
+          <li><span class="when">Feb 2025</span><p class="what">International Symposium on Mitochondria, Cell Death and Human Diseases, JNU, New Delhi. Poster.</p></li>
+          <li><span class="when">Oct 2024</span><p class="what">Cell Symposia: Multifaceted Mitochondria, Sitges. Abstract accepted.</p></li>
+          <li><span class="when">2023</span><p class="what">ICMR Senior Research Fellowship</p></li>
+          <li><span class="when">2018, 2019</span><p class="what">Qualified CSIR-UGC NET (Lectureship) and GATE, Life Sciences</p></li>
+        </ul>
+        <p class="note">Peer reviewer for <em>Scientific Reports</em>, <em>BMC Immunology</em>, <em>Inflammation</em>, <em>European Journal of Medical Research</em>, <em>Thrombosis Journal</em> and <em>BMC Infectious Diseases</em>. Member of the American Society for Cell Biology.</p>
+      </div>
+    </section>
+
+    <section class="block" id="contact" aria-labelledby="h-contact">
+      <h2 id="h-contact">Contact</h2>
+      <div class="body">
+        <p>Department of Biotechnology, Jamia Millia Islamia, New Delhi, India</p>
+        <p><a href="mailto:rs.mmohsin@jmi.ac.in">rs.mmohsin@jmi.ac.in</a><br><a href="mailto:mohsinkhan3870@gmail.com">mohsinkhan3870@gmail.com</a></p>
+        <p>I am happy to hear about postdoctoral opportunities in mitochondrial biology, immunometabolism and lung inflammation.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Last updated November 2026</footer>
+</div>
+</body>
+</html>
